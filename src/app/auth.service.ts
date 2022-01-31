@@ -9,19 +9,15 @@ import { Observable,BehaviorSubject } from 'rxjs';
 })
 export class AuthService {
   currentUser =new BehaviorSubject(null);
-  isLogin:boolean=true;
     constructor(private _HttpClient : HttpClient,private _Router:Router) {
       if (localStorage.getItem("userToken") != null) {
-        this.saveCurrentUser();
+          this.saveCurrentUser();
+          this._Router.navigate(['/products']);
       }
      }
     saveCurrentUser(){
       let token:any = localStorage.getItem("userToken");
-      this.currentUser.next(jwtDecode(token));
-    }
-    register(formData:any):Observable<any>
-    {
-      return this._HttpClient.post('https://route-egypt-api.herokuapp.com/signup',formData);
+      this.currentUser.next(token);
     }
     login(formData:any):Observable<any>
     {
