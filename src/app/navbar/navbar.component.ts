@@ -8,12 +8,19 @@ import { AuthService } from '../auth.service';
 export class NavbarComponent implements OnInit {
 
   isLogin:boolean = false;
-  showNotf:boolean = true;
-  notification = {
-       Title:"Aqar Finder",
-       Date:"24 mar 2021",
-       Draft :true
-  }
+  showNotf:boolean = false;
+  showChat:boolean = true;
+  showNew:boolean = false;
+  showChatBar:boolean = false;
+  friends = [{cat:'A', profile : [{name:"Ahmed Adel",online:true},
+                                  {name:"Ahmed Rami",online:false},]},
+             {cat:'B', profile : [{name:"Basem Adel",online:true},
+                                  {name:"Basma Rami",online:false},]},
+]
+  notification = [{ Title:"Aqar Finder", Date:"24 mar 2021", Draft :true },
+                  { Title:"Aqar Finder", Date:"20 april 2021", Draft :false },
+                  { Title:"Aqar Finder", Date:"10 june 2021", Draft :true },
+                  { Title:"Aqar Finder", Date:"3 septemper 2020", Draft :false }];
   constructor(private _AuthService:AuthService) {
     this._AuthService.currentUser.subscribe(()=>{
       if (this._AuthService.currentUser.getValue()!=null) {
@@ -23,6 +30,7 @@ export class NavbarComponent implements OnInit {
       }
     });
    }
+  
   isLogout(){
     this._AuthService.logout();
   }
@@ -31,5 +39,14 @@ export class NavbarComponent implements OnInit {
 
   notfications(bool:boolean){
     this.showNotf = bool;
+  }
+  new(bool:boolean){
+    this.showNew = bool;
+  }
+  chatBar(bool:boolean){
+    this.showChatBar = bool;
+  }
+  chat(bool:boolean){
+    this.showChat = bool;
   }
 }

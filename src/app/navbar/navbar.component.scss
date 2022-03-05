@@ -1,105 +1,304 @@
 .navbar {
-    position: absolute;
-    width: 100%;
-    background-color: #1B3A66;
-    height: 60px;
-    overflow: hidden;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 60px;
+  background-color: #1b3a66;
+  overflow: hidden;
+}
+@media all and (max-width: 1000px) {
+  .navbar{
+    height: fit-content;  
+  }
 }
 
 img {
-    margin-top: -70px;
-    width: 13%;
-    margin-right: 76%;
+  width: 140px;
+  margin-right: 76%;
 }
 
 .logout {
-    background: white;
-    height: 20px;
-    border: 0px;
-    color: #1B3A66;
-    font-size: 12px;
+  background: white;
+  height: 20px;
+  border: 0px;
+  color: #1b3a66;
+  font-size: 12px;
 }
 
 i {
-    color: #E7A229;
-    font-size: 11px;
+  color: #e7a229;
+  font-size: 11px;
 }
 
 .notf {
-    width: 20px;
-    height: 20px;
-    margin-right: 20px;
-    cursor: pointer;
-    img {
-        margin-top: -10px;
-        width: 30px;
-    }
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  img {
+    margin-top: -10px;
+    width: 30px;
+  }
 }
 
 .notfications {
-    position: absolute;
-    right: 0px;
-    background: white;
-    height: 100%;
-    width: 300px;
-    .top {
-        height: 50px;
-        margin-bottom: 20px;
-        p {
-            margin-top: 10px;
-            color: #1B3A66;
-            font-weight: 700;
-        }
-        .new {
-            border: 0px;
-            background: #1B3A66;
-            border-radius: 3px;
-            color: white;
-            padding: 2px 13px;
-        }
-        .back {
-            border: 0px;
-            background: #1B3A66;
-            border-radius: 3px;
-            width: 30px;
-            height: 30px;
-            i {
-                color: white;
-                font-size: 17px;
-            }
-        }
+  z-index: 6;
+  position: absolute;
+  right: 0px;
+  background: white;
+  height: 100%;
+  overflow: auto;
+  width: 300px;
+  box-shadow: 0px 3px 6px #00000029;
+  .top {
+    height: 50px;
+    margin-bottom: 20px;
+    p {
+      margin-top: 10px;
+      color: #1b3a66;
+      font-weight: 700;
     }
-    .head {
-        background: #DEE2E8;
-        height: 30px;
-        border-bottom: 1px solid #1B3A66;
-        p {
-            color: #1B3A66;
-            font-weight: 500;
-        }
+    .new {
+      border: 0px;
+      background: #1b3a66;
+      border-radius: 3px;
+      color: white;
+      padding: 2px 13px;
     }
-    .notification {
-        font-weight: bold;
-        margin-top: 5px;
-        p {
-            color: #1B3A66;
-            margin-bottom: -8px;
-        }
-        span {
-            color: #8595AC;
-            font-size: 10px;
-        }
-        .fa-sticky-note {
-            color: #1B3A66;
-            font-size: 16px;
-        }
-        .fa-edit {
-            color: #1B3A66;
-            font-size: 16px;
-        }
-        .fa-trash-alt {
-            margin-left: 5px;
-            font-size: 16px;
-        }
+    .back {
+      border: 0px;
+      background: #1b3a66;
+      border-radius: 3px;
+      width: 30px;
+      height: 30px;
+      i {
+        color: white;
+        font-size: 17px;
+      }
     }
+  }
+  .head {
+    background: #dee2e8;
+    height: 30px;
+    border-bottom: 1px solid #1b3a66;
+    p {
+      color: #1b3a66;
+      font-weight: 500;
+    }
+  }
+  .notification {
+    font-weight: bold;
+    margin-top: 5px;
+    p {
+      color: #1b3a66;
+      margin-bottom: -8px;
+    }
+    span {
+      color: #8595ac;
+      font-size: 10px;
+    }
+    .fa-sticky-note,
+    .fa-paper-plane {
+      color: #1b3a66;
+      font-size: 16px;
+    }
+    .fa-edit {
+      width: 20px;
+      margin-right: 10px;
+      margin-top: 0px;
+      cursor: pointer;
+    }
+    .fa-trash-alt {
+      cursor: pointer;
+      width: 20px;
+      margin-right: 0px;
+      margin-top: 0px;
+    }
+  }
 }
+
+.newNoti {
+  z-index: 6;
+  position: absolute;
+  right: 0px;
+  background: white;
+  height: 100%;
+  width: 300px;
+  box-shadow: 0px 3px 6px #00000029;
+  label {
+    color: #1b3a66;
+    opacity: 0.7;
+  }
+  .top {
+    background-color: #dee2e8;
+    border-bottom: #1b3a66 1px solid;
+    p {
+      margin-top: 10px;
+      color: #1b3a66;
+      font-weight: 700;
+    }
+    .back {
+      border: 0px;
+      background: #1b3a66;
+      border-radius: 3px;
+      width: 30px;
+      height: 30px;
+      i {
+        color: white;
+        font-size: 17px;
+      }
+    }
+    .fa-trash-alt {
+      font-size: 22px;
+      cursor: pointer;
+      color: red;
+    }
+  }
+  .form-select {
+    width: 20px;
+    font-size: 12px;
+    display: inline-block;
+    border: 1px #dee2e8 solid;
+    border-radius: 3px 0px 0px 3px;
+  }
+  .mid {
+    width: 100px;
+    border: 1px #dee2e8 solid;
+    border-left: 0px;
+    border-radius: 0px 3px 3px 0px;
+    height: 31px;
+  }
+  .form-check {
+    display: inline-block;
+    border: 1px #dee2e8 solid;
+    height: 40px;
+    padding-top: 8px;
+    padding-left: 7px;
+    .form-check-input {
+      margin-left: 1px;
+    }
+    .form-check-label {
+      margin-left: 7px;
+      margin-right: 7px;
+    }
+  }
+  textarea {
+    border-radius: 3px;
+    resize: none;
+    border: 1px #c9c9ca solid;
+  }
+  .draft,
+  .send {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    font-weight: 600;
+  }
+  .draft {
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 30px;
+    background-color: white;
+    border: 2px solid #1b3a66;
+    color: #1b3a66;
+    box-shadow: 0px 3px 6px #00000029;
+  }
+  .send {
+    border: 0px;
+    background: #1b3a66;
+    color: white;
+    box-shadow: 0px 3px 6px #00000029;
+  }
+}
+
+.chat {
+  z-index: 6;
+  position: absolute;
+  right: 0px;
+  background: white;
+  height: 100%;
+  overflow: auto;
+  width: 300px;
+  box-shadow: 0px 3px 6px #00000029;
+  .top {
+    p {
+      margin-top: 10px;
+      color: #1b3a66;
+      font-weight: 700;
+    }
+    .back {
+      border: 0px;
+      background: #dee2e8;
+      border-radius: 3px;
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      i {
+        color: #1b3a66;
+        font-size: 17px;
+      }
+    }
+    .fa-ellipsis-h {
+      font-size: 18px;
+      padding: 5px;
+      cursor: pointer;
+      color: #1b3a66;
+      background: #dee2e8;
+      border-radius: 5px;
+    }
+  }
+  .cat {
+    background: #dee2e8;
+    color: #1b3a66;
+    font-weight: 700;
+    font-size: 20px;
+    padding-top: 10px;
+    height: 50px;
+  }
+  .friend {
+    padding-top: 10px;
+    .row {
+      cursor: pointer;
+    }
+    .left {
+      .fa-user-circle {
+        color: #1b3a66;
+        font-size: 35px;
+        position: relative;
+        .green,
+        .red {
+          position: absolute;
+          right: 0px;
+          bottom: 1px;
+          width: 10px;
+          height: 10px;
+          border-radius: 5px;
+        }
+        .green {
+          background: #39d15b;
+        }
+        .red {
+          background: #fb4a24;
+        }
+      }
+    }
+    .right {
+      display: inline-block;
+      position: relative;
+      p {
+        margin-bottom: 0px;
+      }
+      .up {
+        font-weight: 700;
+        color: #1b3a66;
+      }
+      .down {
+        margin-top: -5px;
+        font-size: 14px;
+        color: #1b3a66;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+

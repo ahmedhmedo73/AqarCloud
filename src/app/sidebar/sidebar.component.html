@@ -1,1 +1,52 @@
-<div *ngIf="isLogin"></div>
+<div *ngIf="isLogin" class="sideBar container">
+  <div class="row">
+    <!-- statistics -->
+
+    <div class="col-md-12" [ngClass]="{ selected: href == 'statistics' }">
+      <img src="../../assets/chart.png" alt="" />
+      <p class="title" (click)="redirect('statistics')">Statistics</p>
+    </div>
+
+    <!-- products  -->
+    <div class="col-md-12" [ngClass]="{ selected: href == 'products' }">
+      <img src="../../assets/box.png" alt="" />
+      <p class="title" (click)="redirect('products')">Products</p>
+      <i
+        class="fas fa-chevron-right"
+        [ngClass]="{ down: downP }"
+        (click)="toggleP()"
+      ></i>
+    </div>
+    <div class="col-md-12 nested showList" [ngClass]="{ hideList: downP }">
+      <div class="line"></div>
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="dot" *ngIf="href == 'products'" [style.top]="dotTop"></div>
+      <p class="nested" (click)="redirect('products'); addNewProduct(false, 0)">
+        Aqar Finder
+      </p>
+      <p class="nested" (click)="redirect('products'); addNewProduct(true, 1)">
+        Add New Product
+      </p>
+    </div>
+
+    <!-- users -->
+    <div class="col-md-12" [ngClass]="{ selected: href == 'users' }">
+      <img src="../../assets/users.png" alt="" />
+      <p class="title" (click)="redirect('users')" style="margin-right: 13%">Users</p>
+      <i
+        class="fas fa-chevron-right"
+        [ngClass]="{ down: downU }"
+        (click)="toggleU()"
+      ></i>
+    </div>
+    <div class="col-md-12 nested showList" [ngClass]="{ hideList: downU }">
+      <div class="line" style="height: 20px"></div>
+      <div class="line1"></div>
+      <div class="dot" *ngIf="href == 'users'" ></div>
+      <p class="nested" (click)="redirect('users'); addNewProduct(false, 0)">
+        Aqar Finder
+      </p>
+    </div>
+  </div>
+</div>

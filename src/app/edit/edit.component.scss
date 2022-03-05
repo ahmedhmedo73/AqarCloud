@@ -1,0 +1,158 @@
+
+  .container {
+    width: 95%;
+    height: 92%;
+    background: white;
+    border-radius: 10px;
+    padding: 0px 20px;
+  }
+  .welcome {
+    margin-left: 2.5%;
+    font: normal normal 600 23px/33px Roboto;
+    letter-spacing: 0px;
+    color: #1b3a66;
+    i {
+      font-size: 17px;
+    }
+    span {
+      margin-left: 10px;
+      font-size: 14px;
+      color: #1b3a6694;
+    }
+  }
+  .row {
+    padding-top: 50px;
+  }
+  .col-md-4 {
+    .image {
+      background-color: #dee2e8;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      .btn {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .col-md-8 {
+    form {
+      .row {
+        padding-top: 0;
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+        /* Hide default HTML checkbox */
+        .switch input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        /* The slider */
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 4px;
+          right: -5px;
+          bottom: 0;
+          background-color: #ccc;
+          -webkit-transition: 0.4s;
+          transition: 0.4s;
+        }
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 18px;
+          width: 18px;
+          left: 4px;
+          bottom: 1px;
+          background-color: white;
+          -webkit-transition: 0.4s;
+          transition: 0.4s;
+        }
+        input {
+          margin-left: 5px;
+        }
+        input:checked + .slider {
+          background-color: green;
+        }
+        input:focus + .slider {
+          box-shadow: 0 0 1px green;
+        }
+        input:checked + .slider:before {
+          -webkit-transform: translateX(16px);
+          -ms-transform: translateX(16px);
+          transform: translateX(16px);
+        }
+        /* Rounded sliders */
+        .slider.round {
+          border-radius: 34px;
+        }
+        .slider.round:before {
+          border-radius: 50%;
+        }
+      }
+      label {
+        color: #1a3965;
+        font-weight: 600;
+        text-align: right;
+      }
+      .col-md-3 {
+        display: flex;
+        justify-content: right;
+        margin-bottom: 4%;
+        label {
+          width: 100%;
+        }
+      }
+      .priceForm {
+        input {
+          width: 40%;
+          margin-right: 3%;
+        }
+      }
+      select {
+        width: 39%;
+      }
+      textarea {
+        resize: none;
+        width: 100%;
+      }
+      input,
+      select,
+      textarea {
+        border-radius: 5px;
+        border: 1px #9d9fa3 solid;
+        &:focus {
+          outline: 1px #9d9fa3 solid;
+        }
+      }
+      .col-md-12 {
+        margin-top: 5%;
+        display: flex;
+        justify-content: right;
+        button {
+          width: 150px;
+          height: 45px;
+          padding: 5px 20px;
+          background-color: #1a3965;
+          border: 0px;
+          color: white;
+          margin-left: 5%;
+          font-size: 22px;
+        }
+        .delete {
+          color: #1a3965;
+          background-color: white;
+          border: 1px solid #1a3965;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+

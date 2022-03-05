@@ -1,0 +1,332 @@
+<div class="body">
+    <p class="welcome">Welcome To Dashboard</p>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-8 users">
+                <div class="row">
+                    <div class="col-md-12 total">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <p class="up">TOTAL USERS</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="down">Total number of users in all programs</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>5000</p>
+                            </div>
+                            <div class="col-md-2">
+                                <img src="../../assets/group.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payingUsers col-md-6">
+                        <p class="up">PAYING USERS</p>
+                        <p class="down">Total number of users is active in all programs</p>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p class="num">4900</p>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="../../assets/dollarB.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="non col-md-6">
+                        <p class="up">NON PAYING USERS</p>
+                        <p class="down">Total number of users is active in all programs</p>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p class="num">100</p>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="../../assets/dollar.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 sales">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p class="up">SALES</p>
+                        <p class="down">To know the number of sale in each program</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="up">TOTAL SALES</p>
+                        <p class="down">1000</p>
+                    </div>
+                    <div class="col-md-6">
+                        <svg class="progress-ring position-absolute" width="200" height="200">
+                            <circle  class="progress-ring__circle two"    fill="transparent"  r="50"   cx="140"  cy="130"/>
+                            <circle  class="progress-ring__circle one"  [style]= "setProgress(50,70)"  fill="transparent"  r="50"   cx="140"  cy="130"/>
+                        </svg>
+                        <div class="inner">
+                            <p>500</p>
+                        </div>
+                        <p>AQAR FINDER SALES</p>
+                    </div>
+                    <div class="col-md-6">
+                        <svg class="progress-ring position-absolute" width="200" height="200">
+                            <circle  class="progress-ring__circle two"    fill="transparent"  r="50"   cx="140"  cy="130"/>
+                            <circle  class="progress-ring__circle one oneright"  [style]= "setProgress(50,70)"  fill="transparent"  r="50"   cx="140"  cy="130"/>
+                        </svg>
+                        <div class="inner innerright">
+                            <p>500</p>
+                        </div>
+                        <p>AQAR CLOUD SALES</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 stats">
+                <p class="up">TOTAL USERS</p>
+                <p class="down">To measure the level of increase and decrease of users during the month</p>
+                <div class="orange"></div>
+                <p class="info">TOTAL USER AQAR FINDER</p>
+                <div class="blue"></div>
+                <p class="info">TOTAL USER AQAR CLOUD</p><br>
+                <div class="yAxis">
+                    <p>1000</p>
+                    <p>900</p>
+                    <p>750</p>
+                    <p>450</p>
+                    <p>300</p>
+                    <p>150</p>
+                    <p>0</p>
+                </div>
+                <table id="line-example-15" class="charts-css line multiple hide-data show-labels show-primary-axis show-6-secondary-axes show-data-axes">
+                    <tbody>
+                        <tr *ngFor="let data of _DataService.data">
+                            <th scope="row" style="align-items: stretch;" class="row1"> {{data.month}} </th>
+                            <td [style]="data.line2" style="--color:#FFD677; "><span class="data "> 20 </span></td>
+                            <td [style]="data.line1" style="--color:#1B3A66; "><span class="data dataa"> 30 </span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="align-items: stretch;" class="row1"> {{_DataService.data2[0].month}} </th>
+                            <td [style]="_DataService.data2[0].line1" style="--color:#1B3A66;"><span class="data"> 50 </span></td>
+                            <td [style]="_DataService.data2[0].line2" style="--color:#FFD677;"><span class="data"> 20 </span></td>
+                            <th scope="row" style="align-items: stretch;" class="row1 row2"> Dec </th>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="d-flex">
+                    <div class="finder">
+                        <p class="up1">500</p>
+                        <p class="down1">TOTAL USER AQAR FINDER</p>
+                    </div>
+                    <div class="cloud">
+                        <p class="up1">400</p>
+                        <p class="down1">TOTAL USER AQAR CLOUD</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 support">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p class="up">Technical Support</p>
+                        <div class="number"></div>
+                        <p class="info">Number of customers service</p><br>
+                        <div class="reply"></div>
+                        <p class="info">Reply to messages</p><br>
+                        <div class="customer"></div>
+                        <p class="info">customers satisfaction</p><br>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="downloadW">
+                            <p>Download Report</p>
+                        </div>
+                        <div class="downloadB">
+                            <p>Download Report</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 circles">
+
+                        <svg class="progress-ring" width="200" height="200">
+                            <circle  class="progress-ring__circle two"    fill="transparent"  r="70"   cx="100"  cy="100"/>
+                            <circle  class="progress-ring__circle one"  [style]= "setProgress(70,75)"  fill="transparent"  r="70"   cx="100"  cy="100"/>
+                            <circle  class="progress-ring__circle three"    fill="transparent"  r="45"   cx="100"  cy="100"/>
+                            <circle  class="progress-ring__circle four"  [style]= "setProgress(45,75)"  fill="transparent"  r="45"   cx="100"  cy="100"/>
+                            <circle  class="progress-ring__circle five"    fill="transparent"  r="25"   cx="100"  cy="100"/>
+                            <circle  class="progress-ring__circle six"  [style]= "setProgress(25,50)"  fill="transparent"  r="25"   cx="100"  cy="100"/>
+                        </svg>
+                    </div>
+                    <div class="col-md-12">
+                        <p>1 Mar 2021 30 Mar 2021</p>
+                    </div>
+                    <div class="col-md-4 left">
+                        <p class="big">300</p>
+                        <p class="small">Number of customers service</p>
+                    </div>
+                    <div class="col-md-4 mid">
+                        <p class="big">290</p>
+                        <p class="small">Reply to messages</p>
+                    </div>
+                    <div class="col-md-4 right">
+                        <p class="big">295</p>
+                        <p class="small">customers satisfaction</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12 products">
+                <p class="up">PRODUCTS</p>
+                <p class="down">To know the percentage of sales of the products and the nature of the users and their number</p>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="yAxis">
+                            <p>1000</p>
+                            <p>900</p>
+                            <p>450</p>
+                            <p>300</p>
+                            <p>150</p>
+                            <p>0</p>
+                        </div>
+                        <table id="column-example-21" class="charts-css column show-labels reverse-data show-primary-axis show-6-secondary-axes data-spacing-20">
+                            <tbody>
+
+                                <tr>
+                                    <th scope="row"> </th>
+                                </tr>
+                                <tr>
+                                    <th scope="row"> </th>
+                                </tr>
+                                <tr>
+                                    <th scope="row"> </th>
+                                </tr>
+                                <tr>
+                                    <th scope="row"> </th>
+                                </tr>
+
+                                <tr *ngFor="let data of _DataService.dataBarchartS">
+                                    <th scope="row" class="title"> {{data.title}} </th>
+                                    <div class="first" [style.height]="data.heightF"></div>
+                                    <div class="first second" [style.height]="data.heightS"></div>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="image">
+                            <img src="../../assets/dark dollar.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>Selling Produtcs</p>
+                        </div>
+                        <div class="image">
+                            <img src="../../assets/orange group.png" alt="">
+                        </div>
+                        <div class="info">
+                            <p>Numbers of Users of this Program</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="table">
+                            <div class="row">
+                                <div class="col-md-3 th one">Products</div>
+                                <div class="col-md-3 th">
+                                    <img src="../../assets/dark dollar.png" alt=""> Selling Produtcs
+                                </div>
+                                <div class="col-md-3 th" style="font-size: 10px;">
+                                    <img src="../../assets/orange group.png" alt=""> Numbers of Users of this Program
+                                </div>
+                                <div class="col-md-3 th two">
+                                    Analytics Selling Produtcs
+                                </div>
+                                <div class="col-md-3 td first">
+                                    <div class="logo">
+                                        <p> logo of product</p>
+                                    </div>
+                                    <p style="display: inline-block;">Aqar Finder</p>
+                                </div>
+                                <div class="col-md-3  td">
+                                    <p>300</p>
+                                </div>
+                                <div class="col-md-3  td">
+                                    <p>300</p>
+                                </div>
+                                <div class="col-md-3 td">
+                                    <img class="chart" src="../../assets/gradient.PNG" alt="">
+                                </div>
+                                <div class="col-md-3 td first">
+                                    <div class="logo">
+                                        <p> logo of product</p>
+                                    </div>
+                                    <p style="display: inline-block;">Aqar Finder</p>
+                                </div>
+                                <div class="col-md-3  td">
+                                    <p>300</p>
+                                </div>
+                                <div class="col-md-3  td">
+                                    <p>300</p>
+                                </div>
+                                <div class="col-md-3 td">
+                                    <img class="chart" src="../../assets/gradient.PNG" alt="">
+                                </div>
+                                <div class="col-md-3 td first">
+                                    <div class="logo">
+                                        <p> logo of product</p>
+                                    </div>
+                                    <p style="display: inline-block;">Aqar Finder</p>
+                                </div>
+                                <div class="col-md-3  td">
+                                    <p>300</p>
+                                </div>
+                                <div class="col-md-3  td">
+                                    <p>300</p>
+                                </div>
+                                <div class="col-md-3 td">
+                                    <img class="chart" src="../../assets/gradient.PNG" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 location">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="up">PROPERTIES USERS IN LOCATION</p>
+                        <p class="down">Distribute users according to their location</p>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <p><span>Giza </span> 500 User</p>
+                                <div class="progress">
+                                    <div style="background-color: #E7A229; width: 50%;" class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <p><span>Cairo </span> 1000 User</p>
+                                <div class="progress">
+                                    <div style="background-color: #475562; width: 90%;" class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <p><span>Lixur </span> 700 User</p>
+                                <div class="progress">
+                                    <div style="background-color: #FFD677; width: 70%;" class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <p><span>Alexandria </span> 300 User</p>
+                                <div class="progress">
+                                    <div style="background-color: #6DCFF6; width: 30%;" class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <p><span>Mansora </span> 600 User</p>
+                                <div class="progress">
+                                    <div style="background-color: #02685C; width: 50%;" class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../../assets/map.PNG" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

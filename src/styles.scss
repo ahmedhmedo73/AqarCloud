@@ -1,4 +1,11 @@
 body,
 html {
-    background-color: #1B3A66;
+  background-color: #1b3a66;
+  min-height: 100vh;
+  min-width: 100vw;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

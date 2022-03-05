@@ -11,6 +11,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductsComponent } from './products/products.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     ProductsComponent,
     NavbarComponent,
     SidebarComponent,
+    StatisticsComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,

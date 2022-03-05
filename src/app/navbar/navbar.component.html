@@ -1,20 +1,35 @@
 <nav *ngIf="isLogin" class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
+        <a class="navbar-brand" routerLink="statistics"><img src="../../assets/aqar cloud white.png" alt="" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <img src="../../assets/aqar cloud white.png" alt="">
-            <div class="notf"><img src="../../assets/urn_aaid_sc_US_56a03786-787a-4ab3-aff9-69cf7433290c (1).png"></div>
-            <div class="notf" (click)="notfications(true)"><img src="../../assets/urn_aaid_sc_US_56a03786-787a-4ab3-aff9-69cf7433290c.png"></div>
-            <button class="logout" (click)="isLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+            <form class="d-flex">
+                <div class="notf" (click)="chatBar(true)">
+                    <img src="../../assets/chat.png" />
+                </div>
+                <div class="notf" (click)="notfications(true)">
+                    <img src="../../assets/notification.png" />
+                </div>
+                <button class="logout" (click)="isLogout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </form>
         </div>
     </div>
 </nav>
 
 <div class="notfications container" *ngIf="showNotf">
-    <div class="row mt-1 ">
+    <div class="row mt-1">
         <div class="top col-md-12 d-flex justify-content-between align-items-lg-center">
-            <button class="back" (click)="notfications(false)"><i class="fas fa-arrow-left"></i></button>
+            <button class="back" (click)="notfications(false)">
+                <i class="fas fa-arrow-left"></i>
+            </button>
             <p>Notfication</p>
-            <button class="new">+New</button>
+            <button class="new" (click)="new(true)">+New</button>
         </div>
         <div class="col-md-12 head">
             <div class="row">
@@ -26,18 +41,100 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12 notification">
+        <div *ngFor="let noti of notification" class="col-md-12 notification">
             <div class="row">
                 <div class="col-md-5">
-                    <p>{{notification.Title}}</p>
-                    <span>{{notification.Date}}</span>
+                    <p>{{ noti.Title }}</p>
+                    <span>{{ noti.Date }}</span>
                 </div>
-                <div class="col-md-4">
+                <div *ngIf="noti.Draft" class="col-md-4">
                     <i class="fas fa-sticky-note"> Draft</i>
                 </div>
+                <div *ngIf="!noti.Draft" class="col-md-4">
+                    <i class="fas fa-paper-plane"> Send</i>
+                </div>
                 <div class="col-md-3">
-                    <i class="far fa-edit"></i>
-                    <i class="far fa-trash-alt"></i>
+                    <img src="../../assets/edit.png" class="fa-edit" alt="" />
+                    <img src="../../assets/delete.png" class="fa-trash-alt" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="newNoti container" *ngIf="showNew">
+    <div class="row">
+        <div class="top col-md-12 d-flex justify-content-between align-items-lg-center">
+            <button class="back" (click)="new(false)">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <p>New Notfication</p>
+            <i class="far fa-trash-alt"></i>
+        </div>
+    </div>
+    <form class="mt-3">
+        <label>Tittle</label><br />
+        <input type="text" placeholder="Subscription" class="w-100" /><br />
+        <label for="">From</label><br />
+        <div class="input-group mb-3">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Product</option>
+                <option value="1">Aqar Finder</option>
+                <option value="2">Aqar Finder</option>
+            </select>
+            <input type="text" class="form-control" aria-label="Text input with dropdown button" />
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                <label class="form-check-label" for="flexCheckDefault">All</label>
+            </div>
+        </div>
+        <label for="">Mention To</label>
+        <div class="input-group mb-3">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Users</option>
+                <option value="1">Users of Aqar Finder</option>
+                <option value="2">Users of Aqar Cloud</option>
+            </select>
+            <input type="text" class="form-control" aria-label="Text input with dropdown button" />
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                <label class="form-check-label" for="flexCheckDefault">All</label>
+            </div>
+        </div>
+        <label>Text</label><br />
+        <textarea name="" id="" cols="30" rows="8"></textarea>
+        <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected"
+            multiple />
+        <button class="draft">Draft</button>
+        <button class="send">Send</button>
+    </form>
+</div>
+<div class="chat container" *ngIf="showChatBar">
+    <div class="row">
+        <div class="top col-md-12 d-flex justify-content-between align-items-lg-center">
+            <button class="back" (click)="chatBar(false)">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <p>Chat List</p>
+            <i class="fas fa-ellipsis-h"></i>
+        </div>
+    </div>
+
+    <div class="row" *ngFor="let friend of friends">
+        <div class="col-md-12 cat">
+            <p>{{ friend.cat }}</p>
+        </div>
+        <div class="col-md-12 friend">
+            <div class="row" *ngFor="let profile of friend.profile" (click)="chat(true)">
+                <div class="left col-md-2">
+                    <i class="fas fa-user-circle">
+                        <div class="green" *ngIf="profile.online"></div>
+                        <div class="red" *ngIf="!profile.online"></div>
+                    </i>
+                </div>
+                <div class="right col-md-9">
+                    <p class="up">{{ profile.name }}</p>
+                    <p class="down" *ngIf="profile.online">is online</p>
+                    <p class="down" *ngIf="!profile.online">left 10 mins ago</p>
                 </div>
             </div>
         </div>

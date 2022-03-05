@@ -1,0 +1,213 @@
+.body {
+  position: absolute;
+  margin-left: 18%;
+  padding-top: 5%;
+  padding-left: 2%;
+  padding-bottom: 2%;
+  right: 0;
+  width: 82%;
+  overflow: hidden;
+  background: #d9dde2;
+}
+
+.welcome {
+  font: normal normal 600 23px/33px Roboto;
+  display: inline-block;
+  letter-spacing: 0px;
+  color: #1b3a66;
+  i {
+    font-size: 17px;
+  }
+  span {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #1b3a6694;
+  }
+}
+.total {
+  box-shadow: 0px 3px 6px #1b3a6629;
+  background: white;
+  border-radius: 10px;
+  padding: 10px 30px;
+  width: 48.5%;
+  .col-md-7 {
+    .up {
+      font-weight: 700;
+      color: #1b3a66;
+      font-size: 20px;
+    }
+    .down {
+      font: normal normal 300 14px/21px Roboto;
+      color: #1b3a66;
+      opacity: 0.7;
+    }
+    .progress {
+      margin-bottom: 10px;
+    }
+    .progress,
+    .progress-bar {
+      border-radius: 10px;
+    }
+  }
+  .col-md-3 {
+    p {
+      margin-top: 21px;
+      margin-left: 50px;
+      font-size: 40px;
+      color: #1b3a66;
+      font-weight: 700;
+    }
+  }
+  .col-md-2 {
+    img {
+      width: 50px;
+      margin-top: 50px;
+      margin-left: 30px;
+    }
+  }
+}
+$blueBarWidth: 25%;
+$orangeBarWidth: 60%;
+.blueBar {
+  background-color: #1b3a66;
+  width: $blueBarWidth;
+  animation: blueBar ease-in-out 3s;
+}
+.orangeBar {
+  background-color: #e7a229;
+  width: $orangeBarWidth;
+  animation: orangeBar ease-in-out 3s;
+}
+@keyframes blueBar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: $blueBarWidth;
+  }
+}
+@keyframes orangeBar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: $orangeBarWidth;
+  }
+}
+
+.admin {
+  width: 100%;
+  display: grid;
+  column-gap: 2%;
+  row-gap: 20px;
+  grid-template-columns: auto auto auto auto;
+  margin-top: 2%;
+  padding-left: 0;
+  .adminCard {
+    width: 100%;
+    box-shadow: 0px 3px 6px #1b3a6629;
+    background: white;
+    border-radius: 10px;
+    padding: 10px 10px 0px 10px;
+    display: flex;
+    justify-content: space-between;
+    img {
+      width: 55px;
+    }
+    .left {
+      width: 30%;
+    }
+    .mid {
+      width: 60%;
+      text-align: center;
+      h5 {
+        color: #1b3a66;
+      }
+      .sup {
+        color: #1b3a66a4;
+      }
+    }
+    .right {
+      width: 10%;
+      .image {
+        width: 100%;
+        margin-left: 40%;
+        height: 20%;
+        background-image: url("../../assets/Edit.svg");
+        cursor: pointer;
+      }
+    }
+    .projects {
+      height: 100%;
+      .project {
+        border: 1px #1b3a6646 solid;
+        width: 28%;
+        height: 25%;
+        padding: 10px 0px;
+        p {
+          color: #1b3a66;
+          font-weight: 600;
+          font-size: 8px;
+        }
+      }
+    }
+  }
+}
+.contacts {
+  background-color: white;
+  width: 98%;
+  margin-top: 2%;
+  box-shadow: 0px 3px 6px #1b3a6629;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0;
+  .topnav {
+    overflow: hidden;
+    background-color: #1b3a66;
+    padding: 1% 5%;
+    height: 60px;
+    .topnav .search-container {
+      float: left;
+    }
+    /* Style the search box inside the navigation bar */
+    input[type="text"] {
+      float: left;
+      padding: 6px;
+      border: none;
+      border-radius: 18px 0px 0px 18px;
+      font-size: 17px;
+      width: 25%;
+      &:focus{
+        outline: none;
+      }
+    }
+    button {
+      float: left;
+      border-radius: 0px 18px 18px 0px;
+      padding: 6px 10px;
+      margin-right: 16px;
+      background: white;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+      
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .topnav .search-container {
+      float: none;
+    }
+    .topnav input[type="text"],
+    .topnav .search-container button {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .topnav input[type="text"] {
+      border: 1px solid #ccc;
+    }
+  }
+}

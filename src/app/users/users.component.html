@@ -1,0 +1,87 @@
+<div class="body">
+  <p class="welcome">
+    Users <i class="fas fa-chevron-right"></i> <span> Aqar Finder</span>
+  </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 total" style="margin-right: 2%">
+        <div class="row">
+          <div class="col-md-7">
+            <p class="up">TOTAL SUBADMIN</p>
+            <div class="progress">
+              <div
+                class="progress-bar blueBar"
+                role="progressbar"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <p class="down">Total number of subadmin in all programs</p>
+          </div>
+          <div class="col-md-3">
+            <p>8</p>
+          </div>
+          <div class="col-md-2">
+            <img src="../../assets/group.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 total">
+        <div class="row">
+          <div class="col-md-7">
+            <p class="up">TOTAL USERS</p>
+            <div class="progress">
+              <div
+                class="progress-bar orangeBar"
+                role="progressbar"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <p class="down">Total number of subadmin in all programs</p>
+          </div>
+          <div class="col-md-3">
+            <p>4900</p>
+          </div>
+          <div class="col-md-2">
+            <img src="../../assets/group.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 admin">
+        <div class="adminCard" *ngFor="let item of _DataService.supAdmin">
+          <div class="left pt-3">
+            <img src="../../assets/person.png" alt="" />
+          </div>
+          <div class="mid pt-4">
+            <h5>Name Surname</h5>
+            <p class="sup">Sup Admin</p>
+            <div class="projects d-flex justify-content-between">
+              <div class="project"><p>Aqar</p></div>
+              <div class="project"><p>Name Of Project</p></div>
+              <div class="project"><p>Name Of Project</p></div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="image">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contacts">
+        <div class="head">
+          <div class="topnav">
+            <div class="search-container">
+              <form>
+                <input type="text" placeholder="Search" name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

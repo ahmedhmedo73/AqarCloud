@@ -1,0 +1,330 @@
+<div class="body" *ngIf="!addNewProduct">
+  <div class="welcome">
+    <p>
+      Products <i class="fas fa-chevron-right"></i> <span> Aqar Finder</span>
+    </p>
+    <img src="../../assets/edit.png" (click)="toggleEdit()" alt="" />
+  </div>
+  <div class="revenue">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="up">Total Revenue</p>
+        <div class="down">
+          <p class="price">60.000<span class="currency">EGP</span></p>
+          <p class="downP">last month 5000 EGP</p>
+        </div>
+      </div>
+      <div class="col-md-12 lineBar">
+        <div class="prog" *ngFor="let revenue of _DataService.revenue">
+          <p>{{ revenue.month }}</p>
+          <div class="progress">
+            <div
+              class="progress-bar"
+              [style.width]="revenue.progress"
+              role="progressbar"
+              aria-valuenow="25"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sales">
+    <div class="row">
+      <div class="col-sm-8">
+        <p class="up">SALES</p>
+        <p class="down">To know the number of sale in each program</p>
+      </div>
+      <div class="col-sm-4">
+        <p class="up">TOTAL SALES</p>
+        <p class="down">1000</p>
+      </div>
+      <div class="col-md-12">
+        <svg class="progress-ring position-absolute" width="350" height="350">
+          <circle
+            class="progress-ring__circle two"
+            fill="transparent"
+            r="90"
+            cx="250"
+            cy="250"
+          />
+          <circle
+            class="progress-ring__circle one"
+            [style]="setProgress(90, 70)"
+            fill="transparent"
+            r="90"
+            cx="250"
+            cy="250"
+          />
+        </svg>
+        <div class="inner">
+          <p>500</p>
+        </div>
+        <p class="down">AQAR FINDER SALES</p>
+      </div>
+    </div>
+  </div>
+  <div class="products">
+    <p class="up">PRODUCTS</p>
+    <p class="down">
+      To know the percentage of sales of the products and the nature of the
+      users and their number
+    </p>
+    <div class="row">
+      <div class="col-md-10">
+        <div class="yAxis">
+          <p>1000</p>
+          <p>900</p>
+          <p>600</p>
+          <p>450</p>
+          <p>300</p>
+          <p>150</p>
+          <p>0</p>
+        </div>
+        <table
+          id="column-example-21"
+          class="charts-css column show-labels show-primary-axis show-6-secondary-axes data-spacing-20"
+        >
+          <tbody>
+            <tr *ngFor="let data of _DataService.dataBarchart">
+              <th scope="row" class="title">{{ data.title }}</th>
+              <div class="first" [style.height]="data.heightF"></div>
+              <div class="first second" [style.height]="data.heightS"></div>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-2">
+        <p class="blue">Total Paying Users</p>
+        <p class="num">500</p>
+        <p class="orange">Total Non Paying Users</p>
+        <p class="num">300</p>
+      </div>
+      <div class="col-md-12">
+        <img src="../../assets/dark dollar.png" alt="" />
+        <p>NON PAYING USERS</p>
+        <img src="../../assets/dark dollar.png" alt="" />
+        <p>PAYING USERS</p>
+      </div>
+    </div>
+  </div>
+  <div class="location">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="up">PROPERTIES USERS IN LOCATION</p>
+        <p class="down">Distribute users according to their location</p>
+        <div class="row">
+          <div class="col-md-10">
+            <p><span>Giza </span> 500 User</p>
+            <div class="progress">
+              <div
+                style="background-color: #e7a229; width: 50%"
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+          <div class="col-md-10">
+            <p><span>Cairo </span> 1000 User</p>
+            <div class="progress">
+              <div
+                style="background-color: #475562; width: 90%"
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+          <div class="col-md-10">
+            <p><span>Lixur </span> 700 User</p>
+            <div class="progress">
+              <div
+                style="background-color: #ffd677; width: 70%"
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+          <div class="col-md-10">
+            <p><span>Alexandria </span> 300 User</p>
+            <div class="progress">
+              <div
+                style="background-color: #6dcff6; width: 30%"
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+          <div class="col-md-10">
+            <p><span>Mansora </span> 600 User</p>
+            <div class="progress">
+              <div
+                style="background-color: #02685c; width: 50%"
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="../../assets/map.PNG" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="add" *ngIf="addNewProduct">
+  <p class="welcome">
+    Products <i class="fas fa-chevron-right"></i> <span>New Product</span>
+  </p>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="image" [style.background-image]="img">
+          <label for="files" class="btn"
+            ><p>
+              <img src="../../assets/upload.png" alt="" /> Upload Image
+            </p></label
+          >
+          <input
+            id="files"
+            type="file"
+            style="display: none"
+            accept="image/png, image/jpeg"
+            (change)="uploadImg($event)"
+          />
+        </div>
+      </div>
+      <div class="col-md-8">
+        <form>
+          <div class="row">
+            <div class="col-md-3">
+              <label>Enable Product </label>
+            </div>
+            <div class="col-md-8">
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div class="col-md-3">
+              <label>Title</label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" style="width: 100%" />
+            </div>
+            <div class="col-md-3">
+              <label>price</label>
+            </div>
+            <div class="col-md-8 priceForm">
+              <input type="text" />
+              <label style="margin-right: 3%">Duration</label>
+              <select name="" id="">
+                <option value="Per Month">Per Month</option>
+                <option value="Per Year">Per Year</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label>Product Description</label>
+            </div>
+            <div class="col-md-8">
+              <textarea name="" id="" cols="30" rows="8"></textarea>
+            </div>
+            <div class="col-md-12">
+              <button class="btn btn-info delete" (click)="delete()">
+                Delete
+              </button>
+              <button class="btn btn-info">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="edit" *ngIf="showEdit">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-between">
+        <p>Edit Product</p>
+        <img src="../../assets/exit.png" (click)="toggleEdit()" alt="" />
+      </div>
+      <div class="col-md-4">
+        <div class="image" [style.background-image]="img">
+          <label for="files" class="btn"
+            ><p>
+              <img src="../../assets/upload.png" alt="" /> Upload Image
+            </p></label
+          >
+          <input
+            id="files"
+            type="file"
+            style="display: none"
+            accept="image/png, image/jpeg"
+            (change)="uploadImg($event)"
+          />
+        </div>
+      </div>
+      <div class="col-md-8">
+        <form>
+          <div class="row">
+            <div class="col-md-3">
+              <label>Enable Product </label>
+            </div>
+            <div class="col-md-8">
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div class="col-md-3">
+              <label>Title</label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" style="width: 100%" />
+            </div>
+            <div class="col-md-3">
+              <label>price</label>
+            </div>
+            <div class="col-md-8 priceForm">
+              <input type="text" />
+              <label style="margin-right: 3%">Duration</label>
+              <select name="" id="">
+                <option value="Per Month">Per Month</option>
+                <option value="Per Year">Per Year</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label>Product Description</label>
+            </div>
+            <div class="col-md-8">
+              <textarea name="" id="" cols="30" rows="8"></textarea>
+            </div>
+            <div class="col-md-12">
+              <button class="btn btn-info delete">Delete</button>
+              <button class="btn btn-info">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
